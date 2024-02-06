@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   
   # associations
   belongs_to :user
-  has_many :coments, as: :commentable, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :destroy
 
   #Video 1 ~ 8:03 timestamp
 
