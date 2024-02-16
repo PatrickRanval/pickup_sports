@@ -1,5 +1,9 @@
 # README
 
+####
+@15:35 in Authenticating User Requests video, experiencing errors around controllers/application_controller.rb and user_controller.rb
+####
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

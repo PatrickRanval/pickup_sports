@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+     has_secure_password 
+
      validates :username, presence: true, uniqueness: true, length: {minimum: 3, maximum: 255}
      validate :validate_username
      validates :email, presence: true, uniqueness: true, length: {minimum: 5, maximum: 255},
@@ -13,6 +15,8 @@ class User < ApplicationRecord
      has_one :profile, dependent: :destroy
      has_many :comments, dependent: :destroy
      has_one :location, as: :locationable, dependent: :destroy
+
+     after_create :create_profile
 
      #events the user has created
      has_many :created_events, class_name: 'Event', foreign_key: 'user_id'
